@@ -1,0 +1,444 @@
+/*
+ Theme Name:   Werbeagentur 21 Divi Child Theme
+ Theme URI:    http://wa21.de
+ Description:  Child Theme Template für die Werbeagentur 21
+ Author:       Werbeagentur 21
+ Author URI:   http://wa21.de
+ Template:     Divi
+ Version:      1.0.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         wa21
+ Text Domain:  child
+*/
+ 
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+/* === ALLGEMEINES === */
+
+/* Zeilenumbrüche mit Bindestrich*/
+p {
+	hyphens: auto;
+}	
+#top-menu-nav {
+	hyphens: auto;
+}
+
+/* Sidebar ausblenden*/
+.et_right_sidebar #main-content .container::before {
+	display: none;
+}
+.et_right_sidebar #left-area{
+	float: none;
+	margin: auto;
+}
+
+/* Colorpicker-Bug beheben*/
+.wp-picker-container a span{position: relative!important;}
+
+
+/* === HEADER-BEREICH === */
+
+/* Top-Mobile */
+#top-header #et-info{
+	display: none;
+	font-size: 30px;
+	padding: 7px;
+}
+/* Menü-Eintrag "Startseite" etc */
+.mobile-only {
+    display: none !important;
+}
+.desktop-only {
+    display: block;
+}
+
+/* Schriftgröße Menü */
+/* #top-menu li {
+	font-size: 13px;
+	padding-right: 11px;
+} */
+
+
+/* === INHALTSBEREICH === */
+
+/* Checkboxen für Standorte */
+.location-checkbox {
+	background-color: #ffffff;
+	border-radius: 15px 15px 15px 15px;
+	border-top: 12px solid #0a78d8;
+	padding-top: 60px !important;
+	padding-right: 60px !important;
+	padding-bottom: 80px !important;
+	padding-left: 40px !important;
+	box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.29);
+}
+
+/* Liste mit ✔ statt Bullets */
+.checkmark-list ul li {
+	list-style-type: none;
+	text-indent: -20px;
+	
+}
+
+.checkmark-list ul li::before {
+	content: "✔ ";
+}
+
+
+/* Stundenpläne Theorieunterricht */
+.timetable-wrap {
+	display: flex;
+	flex-direction: row;
+	padding-left: 45px;
+}
+.timetable-times {
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	left: 30px;
+	top: -10px;
+}
+.timetable-times p {
+	font-size: 14px;
+	border-bottom: 1px solid #c1c1c1;
+	line-height: 3px;
+	padding-bottom: 0px;
+	padding-top: 46px;
+	text-indent: -40px;
+}
+
+
+.timetable-weekday {
+	border-left: 1px solid #c1c1c1;
+	padding: 0px 0px 30px 0px;
+	width: 20%;
+	position: relative;
+}
+.timetable-weekday:last-child {
+	border-right: 1px solid #c1c1c1;
+}
+.timetable-weekday .weekday-heading {
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	height: 30px;
+}
+.lesson-wrap {
+	border: 2px solid #c1c1c1;
+	font-size: 14px;
+	padding: 5px;
+	background-color: #fff;
+	text-align: center;
+	height: 60px;
+	position: absolute;
+	width: calc(100% + 2px); /* 2px wegen Border */
+	left: -1px;
+	color: #333;
+	z-index: 10;
+}
+
+.lesson-wrap p {
+	line-height: 1.5em;
+}
+
+
+/* === FOOTER-BEREICH === */
+#main-footer {
+	display: none;
+}
+
+/* Aufklappbare Untermenüs FOOTER */
+#footer-main-menu .menu-item-has-children {
+	position: relative; 
+}
+#footer-main-menu .menu-item-has-children > a {
+	pointer-events: none;
+}
+#footer-main-menu .sub-menu-toggle {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 50%;
+	top: 0px;
+	right: 10px;
+	cursor: pointer;
+	text-align: right;
+}
+#footer-main-menu .sub-menu-toggle.popped {
+	background-color: rgba(0,0,0,0);
+}
+#footer-main-menu .sub-menu-toggle::before {
+	font-family: "ETmodules" !important;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 18px;
+	font-size: 24px;
+	text-transform: none;
+	speak: none;
+	content: '\33';
+}
+#footer-main-menu .sub-menu-toggle.popped::before {
+	content: '\32';
+}
+#footer-main-menu .sub-menu-toggle ~ ul.sub-menu {
+	display: none !important;
+	padding: 10px 0px 10px 20px !important;
+}
+#footer-main-menu .sub-menu-toggle.popped ~ ul.sub-menu {
+	display: block !important;
+}
+#footer-main-menu li li {
+	padding-left: 0;
+}
+#footer-main-menu li a, 
+#footer-main-menu li li a,
+#footer-main-menu li li li a {
+	padding-right: 20px;
+}
+#footer-main-menu .menu-item-has-children .sub-menu-toggle + a {
+	padding-right: 20px;
+}
+#footer-main-menu .menu-item-has-children > a {
+	background-color: transparent;
+}
+
+#footer-main-menu li {
+	margin-bottom: .8em;
+	line-height: 1.3em;
+}
+
+
+/*=========================================================
+=									  					  = 	
+=            MEDIA QUERIES            					  =
+=									  					  =
+===========================================================*/
+
+/* Diese Breakpoints entsprechen den Divi-Breakpoints. Anpassungen, die 
+für alle Bildschirmgrößen und Bildschirme über 1405px gelten sollen,
+gehören ÜBER DEN MEDIA-QUERY-BEREICH. */
+
+/*=========================================================
+=            MediaQuery XL ( bis 1405)           		  =
+===========================================================*/
+@media screen and (max-width: 1405px){
+
+	/* Burgermenü schon ab hier */
+	#top-menu,
+	#top-header {
+		display: none;
+	}
+	
+	#et_mobile_nav_menu {
+		display: block;
+	}
+	
+	#et_mobile_nav_menu #mobile_menu {
+		width: 80%;
+		max-width: 750px;
+		min-width: 330px;
+		right: 30px;
+		left: auto;
+	}
+	
+	.et_fixed_nav #main-header, 
+	.et_fixed_nav #top-header  {
+		position: absolute;
+	}
+	
+	/* Menü-Eintrag "Startseite" etc */
+    .mobile-only {
+        display: block !important;
+    }
+    .desktop-only {
+        display: none;
+    }
+	
+	/* Aufklappbare Untermenüs HAUPTMENÜ MOBIL */
+	#main-header #mobile_menu .menu-item-has-children {
+		position: relative; 
+	}
+	 /* #main-header #mobile_menu .menu-item-has-children > a {
+		pointer-events: none;
+	} */
+	#main-header #mobile_menu .sub-menu-toggle {
+		position: absolute;
+		z-index: 1;
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+		border-radius: 50%;
+		top: 0px;
+		right: 10px;
+		cursor: pointer;
+		text-align: right;
+	}
+	#main-header #mobile_menu .sub-menu-toggle.popped {
+		background-color: rgba(0,0,0,0);
+	}
+	#main-header #mobile_menu .sub-menu-toggle::before {
+		font-family: "ETmodules" !important;
+		font-weight: normal;
+		font-style: normal;
+		font-variant: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		line-height: 36px;
+		font-size: 24px;
+		text-transform: none;
+		speak: none;
+		content: '\33';
+	}
+	#main-header #mobile_menu .sub-menu-toggle.popped::before {
+		content: '\32';
+	}
+	#main-header #mobile_menu .sub-menu-toggle ~ ul.sub-menu {
+		display: none !important;
+		padding-left: 20px;
+	}
+	#main-header #mobile_menu .sub-menu-toggle.popped ~ ul.sub-menu {
+		display: block !important;
+	}
+	#main-header #mobile_menu li li {
+		padding-left: 0;
+	}
+	#main-header #mobile_menu li a, 
+	#main-header #mobile_menu li li a,
+	#main-header #mobile_menu li li li a {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#main-header #mobile_menu .menu-item-has-children .sub-menu-toggle + a {
+		padding-right: 20px;
+	}
+	#main-header #mobile_menu .menu-item-has-children > a {
+		background-color: transparent;
+	}
+ 	/* ENDE Aufklappbare Untermenüs */
+	
+	/* Zeilen früh umbrechen */
+	.et_pb_row.break-1400 .et_pb_column {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+	
+	.et_pb_row.break-1400 .et_pb_column .et_pb_module {
+		margin-bottom: 30px;
+	}
+}
+
+
+/*=========================================================
+=            MediaQuery L ( bis 1100)         			  =
+===========================================================*/
+@media screen and (max-width: 1100px){
+
+	
+}
+
+/*=========================================================
+=            MediaQuery M ( bis 980)           			   =
+===========================================================*/
+@media screen and (max-width: 980px){
+
+	/* Sliderhöhe */
+	.et_pb_slider, .et_pb_slider .et_pb_container, .et_pb_slider .et_pb_slide {
+   		min-height: 250px;
+	}
+	
+	/* bestimmte Rows (Mehrspalter) noch nicht umbrechen */
+	.et_pb_row.break-late {
+		display: flex;
+		flex-direction: row;
+	}
+	
+	/* BUGFIX: Rows mit sichtbarem Overflow, bitte! */
+	.et_pb_row {
+		overflow: visible !important;
+	}
+	
+	 	
+	/* Stundenpläne Theorieunterricht */
+	.lesson-wrap {
+		font-size: 12px;
+	}
+	
+}
+
+/*=========================================================
+=            MediaQuery S ( unter 768)       			  =
+===========================================================*/
+@media screen and (max-width: 767px){
+
+	/* Top-Mobile anzeigen*/
+	#top-header #et-info{
+		display: block;
+	}
+	
+	/* Mobiles Menü */
+	#et_mobile_nav_menu #mobile_menu {
+		right: 0px;
+	}
+	
+	/* Sliderhöhe */
+	.et_pb_slider, .et_pb_slider .et_pb_container, .et_pb_slider .et_pb_slide {
+   		min-height: 100px;
+	}
+	
+	/* bestimmte Zeilen (Mehrspalter) jetzt umbrechen */
+	.et_pb_row.break-late {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	/* Stundenpläne Theorieunterricht */
+	.timetable-wrap {
+		flex-direction: column;
+		padding-left: 0px;
+	}
+	.timetable-times {
+		display: none;
+	}
+	.timetable-weekday,
+	.timetable-weekday:last-child{
+		width: 100%;
+		border: none;
+	}
+	.timetable-weekday .weekday-heading {
+		text-align: left;
+	}
+	.lesson-wrap {
+		position: relative;
+		top: 0px !important;
+		height: auto !important;
+		font-size: 14px;
+		text-align: left;
+		margin-bottom: 5px;
+		max-width: 500px;
+		border: none;
+		border-left: 3px solid #c1c1c1;
+		padding: 20px;
+	}
+
+}
+
+/*=========================================================
+=            MediaQuery XS ( unter 480)        	     	  =
+===========================================================*/
+@media screen and (max-width: 479px){
+
+
+}
+
+/* DATEIENDE. Anpassungen, die für alle Bildschirmgrößen gelten,
+bitte ÜBER den Media-Query-Abschnitt schreiben! Anpassungen für bestimmte
+Größen in die entsprechende Media Query. */
+
